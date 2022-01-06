@@ -14,13 +14,14 @@ const Home = () => {
   return (
     <Box>
       <Box bg="primary" height={"92vh"}>
-        <Box width={'41%'} padding={'2rem'} color="white" >
-          <Text marginTop={'10rem'} textTransform={'capitalize'} fontWeight={'semibold'}>{'{'} WHO AM I  {'}'}</Text>
-          <Text textTransform={'capitalize'} fontSize={'6xl'} fontWeight={'bold'}>
+        <Box width={{ base: '100%', md: '80%', xl: '41%' }} padding={'2rem'} color="white" >
+          <Text marginTop={{base:'6rem', md:'10rem'}} textTransform={'capitalize'} fontWeight={'semibold'}>{'{'} WHO AM I  {'}'}</Text>
+          <Text textTransform={'capitalize'} fontSize={{base:'2xl', md:'4xl', lg:'6xl'}} fontWeight={'bold'}>
             <Typed
               strings={"Frontend Developer".split(',')}
               typeSpeed={100}
               loop
+              className='typed-strings'
             />
           </Text>
           <Text marginTop={'2rem'}>

@@ -1,4 +1,4 @@
-import { Flex, useDisclosure } from '@chakra-ui/react'
+import { Flex, useDisclosure, useMediaQuery } from '@chakra-ui/react'
 import React from 'react'
 import Header from './Header'
 import SideBar from './SideBar'
@@ -11,9 +11,9 @@ const Layout: React.FC = ({ children }) => {
     return (
         <>
             <Flex direction={'column'}>
-                <Flex direction={'row'}>
-                    <SideBar />
-                    <Flex flexBasis={'95%'} height={'100vh'} direction={'column'}>
+                <Flex direction={'row'} >
+                    <SideBar /> 
+                    <Flex flexBasis={{base:'100%', md:'95%' }} height={"100%"} direction={'column'}>
                         <Header onOpen={onOpen} />
                         <main>{children}</main>
                     </Flex>
