@@ -1,4 +1,4 @@
-import { Flex, useDisclosure, useMediaQuery } from '@chakra-ui/react'
+import { Box, Flex, useDisclosure, Text, Link } from '@chakra-ui/react'
 import React from 'react'
 import Header from './Header'
 import SideBar from './SideBar'
@@ -12,10 +12,21 @@ const Layout: React.FC = ({ children }) => {
         <>
             <Flex direction={'column'}>
                 <Flex direction={'row'} >
-                    <SideBar /> 
-                    <Flex flexBasis={{base:'100%', md:'95%' }} height={"100%"} direction={'column'}>
+                    <SideBar />
+                    <Flex flexBasis={{ base: '100%', md: '95%' }} height={"100%"} direction={'column'}>
                         <Header onOpen={onOpen} />
-                        <main>{children}</main>
+                        <Box mt={'4rem'}>{children}</Box>
+                        <Flex justifyContent={'space-between'} p={'1rem'} background={'black'}>
+                            <Text fontSize={{ md: '.8rem', lg: '1rem' }} color={'white'}>Copyright {new Date().getFullYear()} ©
+                                <Link href='https://twitter.com/narthcodes' isExternal>
+                                    Dumto Imoh
+                                </Link>
+                            </Text>
+
+                            <Link fontSize={{ md: '.8rem', lg: '1rem' }} color={'white'} href='https://twitter.com/Faith_Egwuenu' isExternal>
+                                Designed by Faith Egwuenu ❤️
+                            </Link>
+                        </Flex>
                     </Flex>
                 </Flex>
             </Flex>

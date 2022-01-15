@@ -19,5 +19,8 @@ export const customTheme = extendTheme({
         lg: "1024px",
         xl: "1200px",
         '2xl': '1536px',
-    }
+    },
+    shadows: {
+        outline: 'none' ,
+      }
 })
