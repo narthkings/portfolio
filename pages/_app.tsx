@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import { customTheme } from '../styles/themes'
 import { NextPageWithLayout } from '../types';
+import '@fontsource/outfit/400.css'
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
