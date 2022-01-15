@@ -21,6 +21,10 @@ export const customTheme = extendTheme({
         '2xl': '1536px',
     },
     shadows: {
-        outline: 'none' ,
-      }
+        outline: 'none',
+    },
+    fonts: {
+        heading: 'outfit',
+        body: 'outfit',
+    },
 })
