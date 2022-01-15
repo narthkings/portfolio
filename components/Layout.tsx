@@ -16,14 +16,14 @@ const Layout: React.FC = ({ children }) => {
                     <Flex flexBasis={{ base: '100%', md: '95%' }} height={"100%"} direction={'column'}>
                         <Header onOpen={onOpen} />
                         <Box mt={'4rem'}>{children}</Box>
-                        <Flex justifyContent={'space-between'} p={'1rem'} background={'black'}>
-                            <Text fontSize={{ md: '.8rem', lg: '1rem' }} color={'white'}>Copyright {new Date().getFullYear()} ©
+                        <Flex alignItems={{base:'center'}} direction={{base:'column', md:'row'}} justifyContent={'space-between'} p={'1rem'} background={'black'}>
+                            <Text fontSize={{ base: '.8rem', lg: '1rem' }} color={'white'}>Copyright {new Date().getFullYear()} ©
                                 <Link href='https://twitter.com/narthcodes' isExternal>
                                     Dumto Imoh
                                 </Link>
                             </Text>
 
-                            <Link fontSize={{ md: '.8rem', lg: '1rem' }} color={'white'} href='https://twitter.com/Faith_Egwuenu' isExternal>
+                            <Link fontSize={{ base: '.8rem', lg: '1rem' }} color={'white'} href='https://twitter.com/Faith_Egwuenu' isExternal>
                                 Designed by Faith Egwuenu ❤️
                             </Link>
                         </Flex>
