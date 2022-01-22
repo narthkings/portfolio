@@ -11,7 +11,14 @@ import { useRouter } from 'next/router'
 const Home = () => {
  const router = useRouter()
   return (
-    <Box>
+    <>
+      <Head>
+        <title>Home - Dumto Imoh</title>
+        <meta name="description" content="Dumto Imoh is a frontend developer based in Lagos, Nigeria, with over teo years of experience" />
+        <meta property="og:title" content="Welcome to my website" key="title" />
+        <meta property="og:description" content="Dumto Imoh is a frontend developer based in Lagos, Nigeria, with over teo years of experience" key="description" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Box bg="primary" height={"92vh"}>
         <Box width={{ base: '100%', md: '80%', xl: '41%' }} padding={'2rem'} color="white" >
           <Text marginTop={{base:'6rem', md:'10rem'}} textTransform={'capitalize'} fontWeight={'semibold'}>{'{'} WHO AM I  {'}'}</Text>
@@ -32,7 +39,7 @@ const Home = () => {
         </Box>
       </Box>
 
-    </Box>
+    </>
   )
 }
 
