@@ -15,7 +15,7 @@ type Props = {
   isOpen: boolean;
   onClose: () => void;
 };
-const SideDrawer = ({ isOpen, onClose }: Props) => {
+const SideDrawer = ({isOpen, onClose}: Props) => {
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={"md"}>
       <DrawerOverlay />

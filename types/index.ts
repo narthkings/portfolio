@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
-import { NextPage } from "next";
+import {ReactElement} from "react";
+import {NextPage} from "next";
 
 type GetLayoutFunc = (page: ReactElement) => ReactElement;
 
@@ -13,10 +13,10 @@ export type Message = {
 };
 
 export type Experience = {
-  id: string,
-  name_of_company: string,
-  role: string,
-  start_date: string,
-  end_date: string,
-  content: { document: any },
-}
+  id: string;
+  name_of_company: string;
+  role: string;
+  start_date: string;
+  end_date: string;
+  content: {document: any};
+};

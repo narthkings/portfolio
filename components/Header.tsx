@@ -1,18 +1,18 @@
-import { HamburgerIcon } from "@chakra-ui/icons";
-import { Box, Flex, Text, Link, useMediaQuery } from "@chakra-ui/react";
+import {HamburgerIcon} from "@chakra-ui/icons";
+import {Box, Flex, Text, Link, useMediaQuery} from "@chakra-ui/react";
 import NextLink from "next/link";
 
 type Iprops = {
   onOpen: () => void;
 };
-const Header = ({ onOpen }: Iprops) => {
+const Header = ({onOpen}: Iprops) => {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
 
   return (
     <Flex
       zIndex={"11"}
       position={"fixed"}
-      width={{ base: "100%", md: "91%", lg: "95%" }}
+      width={{base: "100%", md: "91%", lg: "95%"}}
       bg="primary"
       padding={"2rem"}
       height="8%"
@@ -20,11 +20,11 @@ const Header = ({ onOpen }: Iprops) => {
     >
       <Box
         opacity={1}
-        width={{ base: "15%", md: "5%" }}
+        width={{base: "15%", md: "5%"}}
         position={"relative"}
         bg="gray.100"
         pl="2"
-        height={{ base: "2rem", lg: "2.3rem" }}
+        height={{base: "2rem", lg: "2.3rem"}}
       >
         <NextLink href="/" passHref>
           <Link>
@@ -33,7 +33,7 @@ const Header = ({ onOpen }: Iprops) => {
               position={"absolute"}
               textTransform={"uppercase"}
               fontWeight={"bold"}
-              fontSize={{ base: "lg", lg: "2xl" }}
+              fontSize={{base: "lg", lg: "2xl"}}
               color="white"
             >
               Dumto imoh

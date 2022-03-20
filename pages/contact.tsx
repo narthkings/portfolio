@@ -1,5 +1,5 @@
-import type { ReactElement } from "react";
-import { Formik, Form } from "formik";
+import type {ReactElement} from "react";
+import {Formik, Form} from "formik";
 import {
   Box,
   Flex,
@@ -11,8 +11,8 @@ import {
   FormHelperText,
 } from "@chakra-ui/react";
 import Layout from "../components/Layout";
-import { MessageSchema } from "../utilities/schema";
-import { Message } from "../types";
+import {MessageSchema} from "../utilities/schema";
+import {Message} from "../types";
 import Head from "next/head";
 
 const Contact = () => {
@@ -22,7 +22,7 @@ const Contact = () => {
     message: "",
   };
 
-  const onSubmit = (details: Message, { resetForm }: any) => {
+  const onSubmit = (details: Message, {resetForm}: any) => {
     resetForm();
   };
 
@@ -39,11 +39,7 @@ const Contact = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box padding={"2rem"} bg="black" height={"92vh"} color="white">
-        <Flex
-          direction={"column"}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
+        <Flex direction={"column"} alignItems={"center"} justifyContent={"center"}>
           <Text fontSize={"2xl"}>
             {"<"}Contact{">"}
           </Text>
@@ -83,7 +79,7 @@ const Contact = () => {
                     variant="filled"
                     placeholder="Enter Name"
                     size="lg"
-                    width={{ base: "100%", md: "100%", xl: "50%" }}
+                    width={{base: "100%", md: "100%", xl: "50%"}}
                   />
                   <FormHelperText color="red">
                     {errors.name && touched.name && errors.name}
@@ -100,7 +96,7 @@ const Contact = () => {
                     variant="filled"
                     placeholder="Enter Email address"
                     size="lg"
-                    width={{ base: "100%", md: "100%", xl: "50%" }}
+                    width={{base: "100%", md: "100%", xl: "50%"}}
                     marginTop={"2rem"}
                   />
                   <FormHelperText color="red">
@@ -117,7 +113,7 @@ const Contact = () => {
                     value={details.message}
                     variant="filled"
                     placeholder="Amazing Portfolio, I’d like you to work with my team on a project ………"
-                    width={{ base: "100%", md: "100%", xl: "50%" }}
+                    width={{base: "100%", md: "100%", xl: "50%"}}
                     size="lg"
                     height={"8rem"}
                     marginTop={"2rem"}
@@ -130,7 +126,7 @@ const Contact = () => {
               <Box display={"flex"} justifyContent={"center"}>
                 <Button
                   mt={4}
-                  width={{ base: "100%", md: "100%", xl: "15%" }}
+                  width={{base: "100%", md: "100%", xl: "15%"}}
                   color={"primary"}
                   size={"md"}
                   background={"secondary.100"}
