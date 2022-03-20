@@ -1,13 +1,22 @@
-import { ReactElement } from 'react';
+import { ReactElement } from "react";
 import { NextPage } from "next";
 
 type GetLayoutFunc = (page: ReactElement) => ReactElement;
 
 export type NextPageWithLayout = NextPage & {
-    getLayout?: GetLayoutFunc;
-}
+  getLayout?: GetLayoutFunc;
+};
 export type Message = {
-    name: string;
-    email: string;
-    message: string;
+  name: string;
+  email: string;
+  message: string;
+};
+
+export type Experience = {
+  id: string,
+  name_of_company: string,
+  role: string,
+  start_date: string,
+  end_date: string,
+  content: { document: any },
 }
