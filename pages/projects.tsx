@@ -5,14 +5,28 @@ import {
   Link,
   Text,
   Stack,
-  useMediaQuery,
   SimpleGrid,
 } from "@chakra-ui/react";
 import Head from "next/head";
-import {ReactElement} from "react";
+import { InferGetStaticPropsType } from "next";
+import { ReactElement } from "react";
+import { query } from ".keystone/api";
 import Layout from "../components/Layout";
+import { ProjectsSchema } from "../types";
 
-const Projects = () => {
+
+export const getStaticProps = async () => {
+  const projects = await query.portfolioProject.findMany({
+    query: "id name description projectUrl badges{name}"
+  }) as ProjectsSchema[];
+  return {
+    props: {
+      projects
+    }
+  }
+}
+
+const Projects = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
@@ -20,7 +34,7 @@ const Projects = () => {
         <meta property="og:title" content="Projects" key="title" />
         <meta
           property="og:description"
-          content="Projects i have worked on "
+          content="Hands on Projects I have worked on"
           key="description"
         />
         <link rel="icon" href="/favicon.ico" />
@@ -33,147 +47,37 @@ const Projects = () => {
           <Text fontSize={"md"}>Projects I have worked on 😋</Text>
         </Flex>
 
-        <SimpleGrid columns={{base: 1, md: 2, xl: 3}} spacing={"2rem"} marginTop={"4rem"}>
-          <Box borderRadius={"sm"} p="8" bg={"#16161A"}>
-            <Text fontSize={"lg"} fontWeight={"bold"}>
-              Stripe
-            </Text>
-            <Stack mt={"4"} direction="row" flexWrap={"wrap"}>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-            </Stack>
-            <Text fontSize={"small"} fontWeight={"light"} my={"5"}>
-              A frame website that helps users to easily purchase different kind of frame
-              and it sizes and also get it delivered to them
-            </Text>
-            <Link
-              textDecoration={"underline"}
-              color={"secondary.100"}
-              href="https://chakra-ui.com"
-              isExternal
-            >
-              Project Url
-            </Link>
-          </Box>
-          <Box borderRadius={"sm"} p="8" bg={"#16161A"}>
-            <Text fontSize={"lg"} fontWeight={"bold"}>
-              Stripe
-            </Text>
-            <Stack mt={"4"} direction="row" flexWrap={"wrap"}>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-            </Stack>
-            <Text fontSize={"small"} fontWeight={"light"} my={"5"}>
-              A frame website that helps users to easily purchase different kind of frame
-              and it sizes and also get it delivered to them
-            </Text>
-            <Link
-              textDecoration={"underline"}
-              color={"secondary.100"}
-              href="https://chakra-ui.com"
-              isExternal
-            >
-              Project Url
-            </Link>
-          </Box>
-          <Box borderRadius={"sm"} p="8" bg={"#16161A"}>
-            <Text fontSize={"lg"} fontWeight={"bold"}>
-              Stripe
-            </Text>
-            <Stack mt={"4"} direction="row" flexWrap={"wrap"}>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-            </Stack>
-            <Text fontSize={"small"} fontWeight={"light"} my={"5"}>
-              A frame website that helps users to easily purchase different kind of frame
-              and it sizes and also get it delivered to them
-            </Text>
-            <Link
-              textDecoration={"underline"}
-              color={"secondary.100"}
-              href="https://chakra-ui.com"
-              isExternal
-            >
-              Project Url
-            </Link>
-          </Box>
-          <Box borderRadius={"sm"} p="8" bg={"#16161A"}>
-            <Text fontSize={"lg"} fontWeight={"bold"}>
-              Stripe
-            </Text>
-            <Stack mt={"4"} direction="row" flexWrap={"wrap"}>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-            </Stack>
-            <Text fontSize={"small"} fontWeight={"light"} my={"5"}>
-              A frame website that helps users to easily purchase different kind of frame
-              and it sizes and also get it delivered to them
-            </Text>
-            <Link
-              textDecoration={"underline"}
-              color={"secondary.100"}
-              href="https://chakra-ui.com"
-              isExternal
-            >
-              Project Url
-            </Link>
-          </Box>
-          <Box borderRadius={"sm"} p="8" bg={"#16161A"}>
-            <Text fontSize={"lg"} fontWeight={"bold"}>
-              Stripe
-            </Text>
-            <Stack mt={"4"} direction="row" flexWrap={"wrap"}>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-              <Badge borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                Success
-              </Badge>
-            </Stack>
-            <Text fontSize={"small"} fontWeight={"light"} my={"5"}>
-              A frame website that helps users to easily purchase different kind of frame
-              and it sizes and also get it delivered to them
-            </Text>
-            <Link
-              textDecoration={"underline"}
-              color={"secondary.100"}
-              href="https://chakra-ui.com"
-              isExternal
-            >
-              Project Url
-            </Link>
-          </Box>
+        <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={"2rem"} marginTop={"4rem"}>
+          {
+            projects.map((project) => (
+              <Box key={project.id} borderRadius={"md"} p="8" bg={"#16161A"}>
+                <Text fontSize={"lg"} fontWeight={"bold"}>
+                  {project.name}
+                </Text>
+                <Stack mt={"4"} direction="row" flexWrap={"wrap"}>
+
+                  {project.badges.map(badge => (
+                    <Badge key={badge.name} borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
+                      {badge.name}
+                    </Badge>
+                  ))}
+                </Stack>
+                <Text fontSize={"small"} fontWeight={"light"} my={"5"}>
+                  {project.description}
+                </Text>
+                <Link
+                  textDecoration={"underline"}
+                  color={"secondary.100"}
+                  href={project.projectUrl}
+                  isExternal
+                >
+                  {project.name}
+                </Link>
+              </Box>
+            ))
+          }
+
+
         </SimpleGrid>
       </Box>
     </>

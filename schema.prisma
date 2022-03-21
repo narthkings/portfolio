@@ -27,3 +27,17 @@ model contactMe {
   message String @default("")
   content String @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
 }
+
+model portfolioProject {
+  id          String  @id @default(uuid())
+  name        String  @default("")
+  description String  @default("")
+  projectUrl  String  @default("")
+  badges      stack[] @relation("portfolioProject_badges")
+}
+
+model stack {
+  id                           String             @id @default(uuid())
+  name                         String             @default("")
+  from_portfolioProject_badges portfolioProject[] @relation("portfolioProject_badges")
+}
