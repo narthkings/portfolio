@@ -154,6 +154,114 @@ input contactMeCreateInput {
   content: JSON
 }
 
+type portfolioProject {
+  id: ID!
+  name: String
+  description: String
+  projectUrl: String
+  badges(
+    where: stackWhereInput! = {}
+    orderBy: [stackOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [stack!]
+  badgesCount(where: stackWhereInput! = {}): Int
+}
+
+input portfolioProjectWhereUniqueInput {
+  id: ID
+}
+
+input portfolioProjectWhereInput {
+  AND: [portfolioProjectWhereInput!]
+  OR: [portfolioProjectWhereInput!]
+  NOT: [portfolioProjectWhereInput!]
+  id: IDFilter
+  name: StringFilter
+  description: StringFilter
+  projectUrl: StringFilter
+  badges: stackManyRelationFilter
+}
+
+input stackManyRelationFilter {
+  every: stackWhereInput
+  some: stackWhereInput
+  none: stackWhereInput
+}
+
+input portfolioProjectOrderByInput {
+  id: OrderDirection
+  name: OrderDirection
+  description: OrderDirection
+  projectUrl: OrderDirection
+}
+
+input portfolioProjectUpdateInput {
+  name: String
+  description: String
+  projectUrl: String
+  badges: stackRelateToManyForUpdateInput
+}
+
+input stackRelateToManyForUpdateInput {
+  disconnect: [stackWhereUniqueInput!]
+  set: [stackWhereUniqueInput!]
+  create: [stackCreateInput!]
+  connect: [stackWhereUniqueInput!]
+}
+
+input portfolioProjectUpdateArgs {
+  where: portfolioProjectWhereUniqueInput!
+  data: portfolioProjectUpdateInput!
+}
+
+input portfolioProjectCreateInput {
+  name: String
+  description: String
+  projectUrl: String
+  badges: stackRelateToManyForCreateInput
+}
+
+input stackRelateToManyForCreateInput {
+  create: [stackCreateInput!]
+  connect: [stackWhereUniqueInput!]
+}
+
+type stack {
+  id: ID!
+  name: String
+}
+
+input stackWhereUniqueInput {
+  id: ID
+}
+
+input stackWhereInput {
+  AND: [stackWhereInput!]
+  OR: [stackWhereInput!]
+  NOT: [stackWhereInput!]
+  id: IDFilter
+  name: StringFilter
+}
+
+input stackOrderByInput {
+  id: OrderDirection
+  name: OrderDirection
+}
+
+input stackUpdateInput {
+  name: String
+}
+
+input stackUpdateArgs {
+  where: stackWhereUniqueInput!
+  data: stackUpdateInput!
+}
+
+input stackCreateInput {
+  name: String
+}
+
 """
 The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 """
@@ -181,6 +289,29 @@ type Mutation {
   updateContactMes(data: [contactMeUpdateArgs!]!): [contactMe]
   deletecontactMe(where: contactMeWhereUniqueInput!): contactMe
   deleteContactMes(where: [contactMeWhereUniqueInput!]!): [contactMe]
+  createportfolioProject(data: portfolioProjectCreateInput!): portfolioProject
+  createPortfolioProjects(
+    data: [portfolioProjectCreateInput!]!
+  ): [portfolioProject]
+  updateportfolioProject(
+    where: portfolioProjectWhereUniqueInput!
+    data: portfolioProjectUpdateInput!
+  ): portfolioProject
+  updatePortfolioProjects(
+    data: [portfolioProjectUpdateArgs!]!
+  ): [portfolioProject]
+  deleteportfolioProject(
+    where: portfolioProjectWhereUniqueInput!
+  ): portfolioProject
+  deletePortfolioProjects(
+    where: [portfolioProjectWhereUniqueInput!]!
+  ): [portfolioProject]
+  createstack(data: stackCreateInput!): stack
+  createStacks(data: [stackCreateInput!]!): [stack]
+  updatestack(where: stackWhereUniqueInput!, data: stackUpdateInput!): stack
+  updateStacks(data: [stackUpdateArgs!]!): [stack]
+  deletestack(where: stackWhereUniqueInput!): stack
+  deleteStacks(where: [stackWhereUniqueInput!]!): [stack]
 }
 
 type Query {
@@ -200,6 +331,22 @@ type Query {
   ): [contactMe!]
   contactMe(where: contactMeWhereUniqueInput!): contactMe
   contactMesCount(where: contactMeWhereInput! = {}): Int
+  portfolioProjects(
+    where: portfolioProjectWhereInput! = {}
+    orderBy: [portfolioProjectOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [portfolioProject!]
+  portfolioProject(where: portfolioProjectWhereUniqueInput!): portfolioProject
+  portfolioProjectsCount(where: portfolioProjectWhereInput! = {}): Int
+  stacks(
+    where: stackWhereInput! = {}
+    orderBy: [stackOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [stack!]
+  stack(where: stackWhereUniqueInput!): stack
+  stacksCount(where: stackWhereInput! = {}): Int
   keystone: KeystoneMeta!
 }
 
