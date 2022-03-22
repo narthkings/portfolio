@@ -102,56 +102,49 @@ input experienceCreateInput {
   content: JSON
 }
 
-type contactMe {
+type contact {
   id: ID!
   name: String
   email: String
   message: String
-  content: contactMe_content_Document
 }
 
-type contactMe_content_Document {
-  document(hydrateRelationships: Boolean! = false): JSON!
-}
-
-input contactMeWhereUniqueInput {
+input contactWhereUniqueInput {
   id: ID
 }
 
-input contactMeWhereInput {
-  AND: [contactMeWhereInput!]
-  OR: [contactMeWhereInput!]
-  NOT: [contactMeWhereInput!]
+input contactWhereInput {
+  AND: [contactWhereInput!]
+  OR: [contactWhereInput!]
+  NOT: [contactWhereInput!]
   id: IDFilter
   name: StringFilter
   email: StringFilter
   message: StringFilter
 }
 
-input contactMeOrderByInput {
+input contactOrderByInput {
   id: OrderDirection
   name: OrderDirection
   email: OrderDirection
   message: OrderDirection
 }
 
-input contactMeUpdateInput {
+input contactUpdateInput {
   name: String
   email: String
   message: String
-  content: JSON
 }
 
-input contactMeUpdateArgs {
-  where: contactMeWhereUniqueInput!
-  data: contactMeUpdateInput!
+input contactUpdateArgs {
+  where: contactWhereUniqueInput!
+  data: contactUpdateInput!
 }
 
-input contactMeCreateInput {
+input contactCreateInput {
   name: String
   email: String
   message: String
-  content: JSON
 }
 
 type portfolioProject {
@@ -280,15 +273,15 @@ type Mutation {
   updateExperiences(data: [experienceUpdateArgs!]!): [experience]
   deleteexperience(where: experienceWhereUniqueInput!): experience
   deleteExperiences(where: [experienceWhereUniqueInput!]!): [experience]
-  createcontactMe(data: contactMeCreateInput!): contactMe
-  createContactMes(data: [contactMeCreateInput!]!): [contactMe]
-  updatecontactMe(
-    where: contactMeWhereUniqueInput!
-    data: contactMeUpdateInput!
-  ): contactMe
-  updateContactMes(data: [contactMeUpdateArgs!]!): [contactMe]
-  deletecontactMe(where: contactMeWhereUniqueInput!): contactMe
-  deleteContactMes(where: [contactMeWhereUniqueInput!]!): [contactMe]
+  createcontact(data: contactCreateInput!): contact
+  createContacts(data: [contactCreateInput!]!): [contact]
+  updatecontact(
+    where: contactWhereUniqueInput!
+    data: contactUpdateInput!
+  ): contact
+  updateContacts(data: [contactUpdateArgs!]!): [contact]
+  deletecontact(where: contactWhereUniqueInput!): contact
+  deleteContacts(where: [contactWhereUniqueInput!]!): [contact]
   createportfolioProject(data: portfolioProjectCreateInput!): portfolioProject
   createPortfolioProjects(
     data: [portfolioProjectCreateInput!]!
@@ -323,14 +316,14 @@ type Query {
   ): [experience!]
   experience(where: experienceWhereUniqueInput!): experience
   experiencesCount(where: experienceWhereInput! = {}): Int
-  contactMes(
-    where: contactMeWhereInput! = {}
-    orderBy: [contactMeOrderByInput!]! = []
+  contacts(
+    where: contactWhereInput! = {}
+    orderBy: [contactOrderByInput!]! = []
     take: Int
     skip: Int! = 0
-  ): [contactMe!]
-  contactMe(where: contactMeWhereUniqueInput!): contactMe
-  contactMesCount(where: contactMeWhereInput! = {}): Int
+  ): [contact!]
+  contact(where: contactWhereUniqueInput!): contact
+  contactsCount(where: contactWhereInput! = {}): Int
   portfolioProjects(
     where: portfolioProjectWhereInput! = {}
     orderBy: [portfolioProjectOrderByInput!]! = []

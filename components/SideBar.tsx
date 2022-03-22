@@ -1,9 +1,10 @@
-import {Box, Flex, Text, Link} from "@chakra-ui/react";
+import { Box, Flex, Text, Link } from "@chakra-ui/react";
 
 const SideBar = () => {
   return (
     <Box
       height={"calc(100vh - -0.875rem)"}
+      // height={'100vh'}
       position={"sticky"}
       top={"0"}
       overscrollBehavior={"contain"}

@@ -1,7 +1,7 @@
 import { config, list } from "@keystone-6/core";
 import { text, relationship, } from "@keystone-6/core/fields";
 import { document } from "@keystone-6/fields-document";
-// import type { GraphQLConfig } from '@keystone-6/core/types';
+
 
 const experience = list({
   fields: {
@@ -13,12 +13,11 @@ const experience = list({
   },
 });
 
-const contactMe = list({
+const contact = list({
   fields: {
     name: text({ validation: { isRequired: true } }),
     email: text({ validation: { isRequired: true } }),
     message: text({ validation: { isRequired: true } }),
-    content: document({ formatting: true }),
   },
 });
 
@@ -53,10 +52,10 @@ export default config({
     generateNodeAPI: true,
   },
 
-  lists: { experience, contactMe, portfolioProject, stack },
+  lists: { experience, contact, portfolioProject, stack },
 
   server: {
-    cors: { origin: ["http://localhost:7777"], credentials: true },
+    cors: { origin: ["http://localhost:3000"], credentials: true },
     port: 8000,
     maxFileSize: 200 * 1024 * 1024,
     healthCheck: true,
