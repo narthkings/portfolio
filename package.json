@@ -32,6 +32,7 @@
     "*.+(json|css|md)": "prettier --write"
   },
   "dependencies": {
+    "@apollo/client": "^3.5.10",
     "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.7.3",
     "@emotion/react": "^11.7.1",
@@ -41,6 +42,7 @@
     "@keystone-6/fields-document": "^1.0.1",
     "formik": "^2.2.9",
     "framer-motion": "^5.5.5",
+    "graphql": "^16.3.0",
     "next": "12.0.10",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -52,7 +54,7 @@
     "@types/react": "17.0.38",
     "eslint": "^8.11.0",
     "eslint-config-next": "12.0.7",
-    "typescript": "4.5.4",
-    "husky": "^7.0.4"
+    "husky": "^7.0.4",
+    "typescript": "4.5.4"
   }
 }

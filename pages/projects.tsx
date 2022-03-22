@@ -1,32 +1,23 @@
-import {
-  Badge,
-  Box,
-  Flex,
-  Link,
-  Text,
-  Stack,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import {Badge, Box, Flex, Link, Text, SimpleGrid} from "@chakra-ui/react";
 import Head from "next/head";
-import { InferGetStaticPropsType } from "next";
-import { ReactElement } from "react";
-import { query } from ".keystone/api";
+import {InferGetStaticPropsType} from "next";
+import {ReactElement} from "react";
+import {query} from ".keystone/api";
 import Layout from "../components/Layout";
-import { ProjectsSchema } from "../types";
-
+import {ProjectsSchema} from "../types";
 
 export const getStaticProps = async () => {
-  const projects = await query.portfolioProject.findMany({
-    query: "id name description projectUrl badges{name}"
-  }) as ProjectsSchema[];
+  const projects = (await query.portfolioProject.findMany({
+    query: "id name description projectUrl badges{name}",
+  })) as ProjectsSchema[];
   return {
     props: {
-      projects
-    }
-  }
-}
+      projects,
+    },
+  };
+};
 
-const Projects = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Projects = ({projects}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
@@ -47,37 +38,58 @@ const Projects = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) 
           <Text fontSize={"md"}>Projects I have worked on 😋</Text>
         </Flex>
 
-        <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={"2rem"} marginTop={"4rem"}>
-          {
-            projects.map((project) => (
-              <Box key={project.id} borderRadius={"md"} p="8" bg={"#16161A"}>
-                <Text fontSize={"lg"} fontWeight={"bold"}>
-                  {project.name}
-                </Text>
-                <Stack mt={"4"} direction="row" flexWrap={"wrap"}>
+        <SimpleGrid
+          columns={{base: 1, md: 1, lg: 2, xl: 3, "2xl": 4}}
+          flexWrap={"wrap"}
+          spacing={"2rem"}
+          marginTop={"4rem"}
+        >
+          {projects.map((project) => (
+            <Box
+              key={project.id}
+              borderRadius={"md"}
+              p={{base: "4", md: "4", lg: "8"}}
+              bg={"#16161A"}
+            >
+              <Text fontSize={"lg"} fontWeight={"bold"}>
+                {project.name}
+              </Text>
 
-                  {project.badges.map(badge => (
-                    <Badge key={badge.name} borderRadius={"3"} p={".4rem"} variant="solid" bg={"secondary.200"}>
-                      {badge.name}
-                    </Badge>
-                  ))}
-                </Stack>
-                <Text fontSize={"small"} fontWeight={"light"} my={"5"}>
-                  {project.description}
-                </Text>
-                <Link
-                  textDecoration={"underline"}
-                  color={"secondary.100"}
-                  href={project.projectUrl}
-                  isExternal
-                >
-                  {project.name}
-                </Link>
-              </Box>
-            ))
-          }
+              <SimpleGrid
+                flexWrap={"wrap"}
+                mt={"4"}
+                spacing={{base: 2, md: 1}}
+                columns={{base: 3, md: 4, lg: 3}}
+              >
+                {project.badges.map((badge) => (
+                  <Badge
+                    width={"auto"}
+                    textAlign={"center"}
+                    size={".5rem"}
+                    key={badge.name}
+                    borderRadius={"lg"}
+                    p={".4rem"}
+                    variant="solid"
+                    bg={"secondary.200"}
+                  >
+                    {badge.name}
+                  </Badge>
+                ))}
+              </SimpleGrid>
 
-
+              <Text fontSize={{base: "md", lg: "small"}} fontWeight={"light"} my={"5"}>
+                {project.description}
+              </Text>
+              <Link
+                textDecoration={"underline"}
+                color={"secondary.100"}
+                href={project.projectUrl}
+                isExternal
+              >
+                {project.name}
+              </Link>
+            </Box>
+          ))}
         </SimpleGrid>
       </Box>
     </>

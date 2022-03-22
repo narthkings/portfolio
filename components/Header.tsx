@@ -11,10 +11,11 @@ const Header = ({onOpen}: Iprops) => {
   return (
     <Flex
       zIndex={"11"}
-      position={"fixed"}
-      width={{base: "100%", md: "91%", lg: "95%"}}
+      // position={"sticky"}
+      sx={{position: "-webkit-sticky", /* Safari */ position: "sticky", top: "0"}}
+      width={{base: "100%", md: "93vw", lg: "100%"}}
       bg="primary"
-      padding={"2rem"}
+      padding={"1.5rem"}
       height="8%"
       justifyContent={"space-between"}
     >

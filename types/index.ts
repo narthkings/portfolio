@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
-import { NextPage } from "next";
+import {ReactElement} from "react";
+import {NextPage} from "next";
 
 type GetLayoutFunc = (page: ReactElement) => ReactElement;
 
@@ -18,7 +18,7 @@ export type Experience = {
   role: string;
   start_date: string;
   end_date: string;
-  content: { document: any };
+  content: {document: any};
 };
 
 export type ProjectsSchema = {
@@ -27,4 +27,4 @@ export type ProjectsSchema = {
   description: string;
   projectUrl: string;
   badges: any[];
-}
+};

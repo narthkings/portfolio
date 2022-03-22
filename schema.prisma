@@ -20,12 +20,11 @@ model experience {
   content         String @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
 }
 
-model contactMe {
+model contact {
   id      String @id @default(uuid())
   name    String @default("")
   email   String @default("")
   message String @default("")
-  content String @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
 }
 
 model portfolioProject {
