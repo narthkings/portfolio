@@ -1,5 +1,5 @@
-import { ReactElement, useEffect } from "react";
-import { Formik, Form } from "formik";
+import {ReactElement, useEffect} from "react";
+import {Formik, Form} from "formik";
 import {
   Box,
   Flex,
@@ -9,19 +9,19 @@ import {
   FormControl,
   Button,
   FormHelperText,
-  useToast
+  useToast,
 } from "@chakra-ui/react";
-import { useQuery, useMutation } from '@apollo/client';
+import {useQuery, useMutation} from "@apollo/client";
 import Layout from "../components/Layout";
-import { SUBMIT_CONTACT_FORM } from "../utilities/gqlQueries"
-import { MessageSchema } from "../utilities/schema";
+import {SUBMIT_CONTACT_FORM} from "../utilities/gqlQueries";
+import {MessageSchema} from "../utilities/schema";
 import Head from "next/head";
-import { Message } from "../types";
+import {Message} from "../types";
 
 const Contact = () => {
   const toast = useToast();
 
-  const [createcontact, { loading, error, data }] = useMutation(SUBMIT_CONTACT_FORM);
+  const [createcontact, {loading, error, data}] = useMutation(SUBMIT_CONTACT_FORM);
 
   const initialValues: Message = {
     name: "",
@@ -32,24 +32,25 @@ const Contact = () => {
   useEffect(() => {
     if (data) {
       toast({
-        title: 'Message Sent',
-        description: "Thank you for reaching out to me. I will get back to you as soon as possible.",
-        status: 'success',
+        title: "Message Sent",
+        description:
+          "Thank you for reaching out to me. I will get back to you as soon as possible.",
+        status: "success",
         duration: 5000,
         isClosable: true,
-        variant: 'top-accent'
-      })
+        variant: "top-accent",
+      });
     } else if (error) {
       toast({
-        title: 'Error',
+        title: "Error",
         description: `Oops!, ${error.message}`,
-        status: 'error',
+        status: "error",
         duration: 5000,
         isClosable: true,
-        variant: 'top-accent'
-      })
+        variant: "top-accent",
+      });
     }
-  }, [data, error])
+  }, [data, error]);
 
   return (
     <>
@@ -63,7 +64,7 @@ const Contact = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box padding={"2rem"} height={'95vh'} bg="black" color="white">
+      <Box padding={"2rem"} height={"95vh"} bg="black" color="white">
         <Flex direction={"column"} alignItems={"center"} justifyContent={"center"}>
           <Text fontSize={"2xl"}>
             {"<"}Contact{">"}
@@ -76,9 +77,9 @@ const Contact = () => {
         <Formik
           validationSchema={MessageSchema}
           initialValues={initialValues}
-          onSubmit={(values, { resetForm }) => {
+          onSubmit={(values, {resetForm}) => {
             createcontact({
-              variables: { ...values }
+              variables: {...values},
             });
           }}
         >
@@ -90,7 +91,12 @@ const Contact = () => {
             errors,
             touched,
           }) => (
-            <Form target="_blank" action="https://formsubmit.co/79cbc62b7a389a7bcd738137fa46c366" method="POST" onSubmit={handleSubmit}>
+            <Form
+              target="_blank"
+              action="https://formsubmit.co/79cbc62b7a389a7bcd738137fa46c366"
+              method="POST"
+              onSubmit={handleSubmit}
+            >
               <Box
                 textAlign={"center"}
                 display={"flex"}
@@ -109,7 +115,7 @@ const Contact = () => {
                     variant="filled"
                     placeholder="Enter Name"
                     size="lg"
-                    width={{ base: "100%", md: "70%", xl: "40%" }}
+                    width={{base: "100%", md: "70%", xl: "40%"}}
                   />
                   <FormHelperText color="red">
                     {errors.name && touched.name && errors.name}
@@ -127,7 +133,7 @@ const Contact = () => {
                     variant="filled"
                     placeholder="Enter Email address"
                     size="lg"
-                    width={{ base: "100%", md: "70%", xl: "40%" }}
+                    width={{base: "100%", md: "70%", xl: "40%"}}
                     marginTop={"2rem"}
                   />
                   <FormHelperText color="red">
@@ -144,7 +150,7 @@ const Contact = () => {
                     value={details.message}
                     variant="filled"
                     placeholder="Amazing Portfolio, I'd like you to work with my team on a project ………"
-                    width={{ base: "100%", md: "70%", xl: "40%" }}
+                    width={{base: "100%", md: "70%", xl: "40%"}}
                     size="lg"
                     height={"8rem"}
                     marginTop={"2rem"}
@@ -158,7 +164,7 @@ const Contact = () => {
               <Box display={"flex"} justifyContent={"center"}>
                 <Button
                   mt={4}
-                  width={{ base: "100%", md: "50%", xl: "15%" }}
+                  width={{base: "100%", md: "50%", xl: "15%"}}
                   color={"primary"}
                   size={"md"}
                   background={"secondary.100"}

@@ -1,8 +1,8 @@
-import { gql } from "@apollo/client";
+import {gql} from "@apollo/client";
 
 const SUBMIT_CONTACT_FORM = gql`
-  mutation SaveContactForm($name:String, $email:String, $message:String) {
-    createcontact(data:{name:$name, email:$email, message:$message}) {
+  mutation SaveContactForm($name: String, $email: String, $message: String) {
+    createcontact(data: {name: $name, email: $email, message: $message}) {
       name
       email
       message
@@ -10,4 +10,4 @@ const SUBMIT_CONTACT_FORM = gql`
   }
 `;
 
-export { SUBMIT_CONTACT_FORM };
+export {SUBMIT_CONTACT_FORM};
