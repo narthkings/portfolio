@@ -33,13 +33,14 @@ const Resume = ({ experiences }: InferGetStaticPropsType<typeof getStaticProps>)
     <>
       <Head>
         <title>Resume - Dumto Imoh</title>
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_IMAGE}`} />
         <meta property="og:title" content="Resume" key="title" />
         <meta
           property="og:description"
           content="Repository of work experience as a frontend developer"
           key="description"
         />
-        <link rel="icon" href={`${process.env.NEXT_PUBLIC_IMAGE}`} />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box
         padding={"2rem"}

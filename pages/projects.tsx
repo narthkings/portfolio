@@ -22,13 +22,14 @@ const Projects = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) 
     <>
       <Head>
         <title>Projects - Dumto Imoh</title>
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_IMAGE}`} />
         <meta property="og:title" content="Projects" key="title" />
         <meta
           property="og:description"
           content="Hands on Projects I have worked on"
           key="description"
         />
-        <link rel="icon" href={`${process.env.NEXT_PUBLIC_IMAGE}`} />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box padding={"2rem"} color={"white"} bg={"primary"} minHeight={"92vh"}>
         <Flex direction={"column"} alignItems={"center"} justifyContent={"center"}>
