@@ -73,13 +73,14 @@ const Contact = () => {
     <>
       <Head>
         <title>Contact - Dumto Imoh</title>
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_IMAGE}`} />
         <meta property="og:title" content="Contact us" key="title" />
         <meta
           property="og:description"
           content="Want to engage with me? Feel free to reach out to me"
           key="description"
         />
-        <link rel="icon" href={`${process.env.NEXT_PUBLIC_IMAGE}`} />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box padding={"2rem"} height={"95vh"} bg="black" color="white">
         <Flex direction={"column"} alignItems={"center"} justifyContent={"center"}>

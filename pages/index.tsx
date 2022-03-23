@@ -14,6 +14,7 @@ const Home = () => {
     <>
       <Head>
         <title>Home - Dumto Imoh</title>
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_IMAGE}`} />
         <meta
           name="description"
           content="Dumto Imoh is a frontend developer based in Lagos, Nigeria, with over teo years of experience"
@@ -24,7 +25,7 @@ const Home = () => {
           content="Dumto Imoh is a frontend developer based in Lagos, Nigeria, with over two years of experience"
           key="description"
         />
-        <link rel="icon" href={`${process.env.NEXT_PUBLIC_IMAGE}`} />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box bg="primary" height={"92vh"}>
         <Box width={{ base: "100%", md: "80%", xl: "41%" }} padding={"2rem"} color="white">
