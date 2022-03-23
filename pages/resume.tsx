@@ -36,10 +36,10 @@ const Resume = ({ experiences }: InferGetStaticPropsType<typeof getStaticProps>)
         <meta property="og:title" content="Resume" key="title" />
         <meta
           property="og:description"
-          content="Repository work experience as a frontend developer"
+          content="Repository of work experience as a frontend developer"
           key="description"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={`${process.env.NEXT_PUBLIC_IMAGE}`} />
       </Head>
       <Box
         padding={"2rem"}

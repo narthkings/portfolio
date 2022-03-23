@@ -28,7 +28,7 @@ const Projects = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) 
           content="Hands on Projects I have worked on"
           key="description"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={`${process.env.NEXT_PUBLIC_IMAGE}`} />
       </Head>
       <Box padding={"2rem"} color={"white"} bg={"primary"} minHeight={"92vh"}>
         <Flex direction={"column"} alignItems={"center"} justifyContent={"center"}>

@@ -1,12 +1,12 @@
-import {Box, Flex, Text, Link, Button} from "@chakra-ui/react";
-import type {NextPage} from "next";
+import { Box, Flex, Text, Link, Button } from "@chakra-ui/react";
+import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Typed from "react-typed";
-import type {ReactElement} from "react";
+import type { ReactElement } from "react";
 import Layout from "../components/Layout";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 
 const Home = () => {
   const router = useRouter();
@@ -24,12 +24,12 @@ const Home = () => {
           content="Dumto Imoh is a frontend developer based in Lagos, Nigeria, with over two years of experience"
           key="description"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={`${process.env.NEXT_PUBLIC_IMAGE}`} />
       </Head>
       <Box bg="primary" height={"92vh"}>
-        <Box width={{base: "100%", md: "80%", xl: "41%"}} padding={"2rem"} color="white">
+        <Box width={{ base: "100%", md: "80%", xl: "41%" }} padding={"2rem"} color="white">
           <Text
-            marginTop={{base: "6rem", md: "10rem"}}
+            marginTop={{ base: "6rem", md: "10rem" }}
             textTransform={"capitalize"}
             fontWeight={"semibold"}
           >
@@ -38,7 +38,7 @@ const Home = () => {
           <Text
             lineHeight={"65px"}
             textTransform={"capitalize"}
-            fontSize={{base: "2xl", md: "4xl", lg: "6xl"}}
+            fontSize={{ base: "2xl", md: "4xl", lg: "6xl" }}
             fontWeight={"bold"}
           >
             <Typed

@@ -79,7 +79,7 @@ const Contact = () => {
           content="Want to engage with me? Feel free to reach out to me"
           key="description"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={`${process.env.NEXT_PUBLIC_IMAGE}`} />
       </Head>
       <Box padding={"2rem"} height={"95vh"} bg="black" color="white">
         <Flex direction={"column"} alignItems={"center"} justifyContent={"center"}>
