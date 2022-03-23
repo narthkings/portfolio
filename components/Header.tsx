@@ -11,8 +11,8 @@ const Header = ({ onOpen }: Iprops) => {
   return (
     <Flex
       zIndex={"11"}
-      position={"sticky"}
-      sx={{ position: "-webkit-sticky", /* Safari */ top: "0" }}
+      position={"-webkit-sticky"}
+      sx={{ position: "sticky", /* Safari */ top: "0" }}
       width={{ base: "100%", md: "93vw", lg: "100%" }}
       bg="primary"
       padding={"1.5rem"}
