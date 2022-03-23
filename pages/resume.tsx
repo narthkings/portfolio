@@ -1,8 +1,8 @@
-import type {ReactElement} from "react";
-import {InferGetStaticPropsType} from "next";
+import type { ReactElement } from "react";
+import { InferGetStaticPropsType } from "next";
 import Head from "next/head";
-import {query} from ".keystone/api";
-import {DownloadIcon} from "@chakra-ui/icons";
+import { query } from ".keystone/api";
+import { DownloadIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -13,7 +13,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 import Layout from "../components/Layout";
-import {Experience} from "../types";
+import { Experience } from "../types";
 
 export const getStaticProps = async () => {
   const experiences = (await query.experience.findMany({
@@ -26,8 +26,8 @@ export const getStaticProps = async () => {
   };
 };
 
-const Resume = ({experiences}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const sizeResponsive = useBreakpointValue({base: "sm", lg: "lg"});
+const Resume = ({ experiences }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const sizeResponsive = useBreakpointValue({ base: "sm", lg: "lg" });
 
   return (
     <>
@@ -54,16 +54,16 @@ const Resume = ({experiences}: InferGetStaticPropsType<typeof getStaticProps>) =
           </Text>
         </Flex>
 
-        <Flex mt={"1rem"} justifyContent={{base: "center", lg: "end"}}>
+        <Flex mt={"1rem"} justifyContent={{ base: "center", lg: "end" }}>
           <Button
             size={sizeResponsive}
             variant={"solid"}
-            _hover={{background: "accent"}}
+            _hover={{ background: "accent" }}
             rightIcon={<DownloadIcon />}
           >
             <Link
               textDecoration={"none"}
-              _hover={{textDecoration: "none"}}
+              _hover={{ textDecoration: "none" }}
               href="https://resume.io/r/StdctoOZc"
               isExternal
               target={"_blank"}
@@ -74,7 +74,7 @@ const Resume = ({experiences}: InferGetStaticPropsType<typeof getStaticProps>) =
         </Flex>
 
         <Flex
-          direction={{base: "column-reverse", lg: "row"}}
+          direction={{ base: "column-reverse", lg: "row" }}
           justifyContent={"center"}
           mt={"2rem"}
         >
@@ -82,10 +82,10 @@ const Resume = ({experiences}: InferGetStaticPropsType<typeof getStaticProps>) =
             direction={"column"}
             fontSize={"md"}
             fontWeight={"normal"}
-            width={{base: "100%", lg: "30%", xl: "18%"}}
+            width={{ base: "100%", lg: "30%", xl: "18%" }}
           >
             <Flex
-              display={{base: "none", lg: "block"}}
+              display={{ base: "none", lg: "block" }}
               alignContent={"center"}
               direction={"column"}
             >
@@ -161,9 +161,9 @@ const Resume = ({experiences}: InferGetStaticPropsType<typeof getStaticProps>) =
               <Text>Trello</Text>
 
               <Box
-                display={{base: "block", lg: "none"}}
+                display={{ base: "block", lg: "none" }}
                 my={"3rem"}
-                width={{base: "100%", md: "80%"}}
+                width={{ base: "100%", md: "80%" }}
                 fontSize={"md"}
               >
                 Open to full-time/ remote opportunities.
@@ -175,7 +175,7 @@ const Resume = ({experiences}: InferGetStaticPropsType<typeof getStaticProps>) =
             direction={"column"}
             fontSize={"md"}
             fontWeight={"normal"}
-            width={{base: "100%", lg: "65%"}}
+            width={{ base: "100%", lg: "65%" }}
           >
             <Text fontSize={"4xl"} fontWeight={"bold"}>
               Dumto Imoh
@@ -183,7 +183,7 @@ const Resume = ({experiences}: InferGetStaticPropsType<typeof getStaticProps>) =
             <Text fontSize={"md"} my={"2"} fontWeight={"medium"}>
               Software Developer
             </Text>
-            <Text width={{base: "100%", md: "80%"}} fontSize={"sm"}>
+            <Text width={{ base: "100%", md: "80%" }} fontSize={"sm"}>
               Hi 👋 there, welcome to my resume corner, below is my resume which sums up
               my work and years of experience in journey as a frontend developer.
             </Text>
@@ -193,16 +193,21 @@ const Resume = ({experiences}: InferGetStaticPropsType<typeof getStaticProps>) =
               </Text>
 
               {experiences.map((exp) => (
-                <Box key={exp.id} mt={"2rem"}>
+                <Box data-aos="fade-up"
+                  data-aos-delay="50"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease-in"
+                  data-aos-anchor-placement="top-bottom"
+                  key={exp.id} mt={"2rem"}>
                   <Flex
-                    direction={{base: "column", md: "row"}}
-                    alignItems={{base: "flex-start", md: "center"}}
+                    direction={{ base: "column", md: "row" }}
+                    alignItems={{ base: "flex-start", md: "center" }}
                   >
                     <Text fontWeight={"medium"} fontSize={"md"}>
                       {exp.name_of_company}
                     </Text>
                     <Divider
-                      display={{base: "none", md: "block"}}
+                      display={{ base: "none", md: "block" }}
                       mx={"1rem"}
                       width={"4%"}
                     ></Divider>
@@ -218,16 +223,16 @@ const Resume = ({experiences}: InferGetStaticPropsType<typeof getStaticProps>) =
                   >
                     {exp.start_date} - {exp.end_date}
                   </Text>
-                  <Box width={{base: "100%", md: "80%"}} fontSize={"sm"}>
+                  <Box width={{ base: "100%", md: "80%" }} fontSize={"sm"}>
                     {exp.content.document[0].children[0].text}
                   </Box>
                 </Box>
               ))}
 
               <Box
-                display={{base: "none", lg: "block"}}
+                display={{ base: "none", lg: "block" }}
                 my={"3rem"}
-                width={{base: "100%", md: "80%"}}
+                width={{ base: "100%", md: "80%" }}
                 fontSize={"md"}
               >
                 Open to full-time/ remote opportunities.

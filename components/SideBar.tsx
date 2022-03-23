@@ -1,4 +1,4 @@
-import {Box, Flex, Text, Link} from "@chakra-ui/react";
+import { Box, Flex, Text, Link } from "@chakra-ui/react";
 
 const SideBar = () => {
   return (
@@ -24,7 +24,7 @@ const SideBar = () => {
           textTransform={"uppercase"}
           transform="rotate(-90deg)"
         >
-          <Link href="https://chakra-ui.com" isExternal>
+          <Link href="https://github.com/narthkings" isExternal>
             Github
           </Link>
         </Text>
@@ -34,7 +34,7 @@ const SideBar = () => {
           textTransform={"uppercase"}
           transform="rotate(-90deg)"
         >
-          <Link href="https://chakra-ui.com" isExternal>
+          <Link href="https://www.linkedin.com/in/dumto-imoh/" isExternal>
             Linkedin
           </Link>
         </Text>
@@ -44,7 +44,7 @@ const SideBar = () => {
           textTransform={"uppercase"}
           transform="rotate(-90deg)"
         >
-          <Link href="https://chakra-ui.com" isExternal>
+          <Link href="https://twitter.com/narthcodes" isExternal>
             Twitter
           </Link>
         </Text>
