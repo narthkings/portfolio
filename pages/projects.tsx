@@ -1,10 +1,10 @@
-import {Badge, Box, Flex, Link, Text, SimpleGrid} from "@chakra-ui/react";
+import { Badge, Box, Flex, Link, Text, SimpleGrid, Wrap, WrapItem } from "@chakra-ui/react";
 import Head from "next/head";
-import {InferGetStaticPropsType} from "next";
-import {ReactElement} from "react";
-import {query} from ".keystone/api";
+import { InferGetStaticPropsType } from "next";
+import { ReactElement } from "react";
+import { query } from ".keystone/api";
 import Layout from "../components/Layout";
-import {ProjectsSchema} from "../types";
+import { ProjectsSchema } from "../types";
 
 export const getStaticProps = async () => {
   const projects = (await query.portfolioProject.findMany({
@@ -17,7 +17,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const Projects = ({projects}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Projects = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
@@ -35,11 +35,11 @@ const Projects = ({projects}: InferGetStaticPropsType<typeof getStaticProps>) =>
           <Text fontSize={"2xl"}>
             {"<"}Projects{">"}
           </Text>
-          <Text fontSize={"md"}>Projects I have worked on 😋</Text>
+          <Text fontSize={"md"}>Projects I have worked on 👨🏾‍💻</Text>
         </Flex>
 
         <SimpleGrid
-          columns={{base: 1, md: 1, lg: 2, xl: 3, "2xl": 4}}
+          columns={{ base: 1, md: 1, lg: 2, xl: 3, "2xl": 4 }}
           flexWrap={"wrap"}
           spacing={"2rem"}
           marginTop={"4rem"}
@@ -48,36 +48,37 @@ const Projects = ({projects}: InferGetStaticPropsType<typeof getStaticProps>) =>
             <Box
               key={project.id}
               borderRadius={"md"}
-              p={{base: "4", md: "4", lg: "8"}}
+              p={{ base: "4", md: "4", lg: "8" }}
               bg={"#16161A"}
+              data-aos="flip-left"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
             >
               <Text fontSize={"lg"} fontWeight={"bold"}>
                 {project.name}
               </Text>
 
-              <SimpleGrid
-                flexWrap={"wrap"}
-                mt={"4"}
-                spacing={{base: 2, md: 1}}
-                columns={{base: 3, md: 4, lg: 3}}
-              >
+              <Wrap mt={2}>
                 {project.badges.map((badge) => (
-                  <Badge
-                    width={"auto"}
-                    textAlign={"center"}
-                    size={".5rem"}
-                    key={badge.name}
-                    borderRadius={"lg"}
-                    p={".4rem"}
-                    variant="solid"
-                    bg={"secondary.200"}
-                  >
-                    {badge.name}
-                  </Badge>
-                ))}
-              </SimpleGrid>
+                  <WrapItem key={badge.name}>
+                    <Badge
+                      textAlign={"center"}
+                      size={".5rem"}
 
-              <Text fontSize={{base: "md", lg: "small"}} fontWeight={"light"} my={"5"}>
+                      borderRadius={"md"}
+                      p={".4rem"}
+                      variant="subtle"
+                      bg={"secondary.200"}
+                      color={"white"}
+                    >
+                      {badge.name}
+                    </Badge>
+                  </WrapItem>
+                ))}
+              </Wrap>
+
+              <Text fontSize={{ base: "md", lg: "small" }} fontWeight={"light"} my={"5"}>
                 {project.description}
               </Text>
               <Link
