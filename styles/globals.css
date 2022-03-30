@@ -33,3 +33,9 @@ a {
   transform: translatey(0px);
   animation: float 6s ease-in-out infinite;
 }
+
+@media screen and (max-width: 425px) {
+  .photoImg {
+    animation: none;
+  }
+}
