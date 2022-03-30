@@ -24,10 +24,10 @@ const Home = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Flex direction={{ base: 'column', xl: 'row' }} alignItems={{ base: 'center', xl: 'unset' }} justifyContent={{ base: 'unset', lg: 'space-between' }} bg="primary" height={{ base: '84vh', md: "92vh" }}>
+      <Flex direction={{ base: 'column', xl: 'row' }} alignItems={{ base: 'center', xl: 'unset' }} justifyContent={{ base: 'unset', lg: 'space-between' }} bg="primary" height={{ base: '80vh', md: "92vh" }}>
         <Flex flexDirection={{ base: 'column' }} alignItems={{ base: 'center', md: 'unset' }} width={{ base: "100%", md: "80%", xl: "45%" }} padding={"2rem"} color="white">
           <Text
-            marginTop={{ base: "10rem", }}
+            marginTop={{ base: "6rem", md: '10rem' }}
             textTransform={"capitalize"}
             fontWeight={"semibold"}
             mb={'.5rem'}
