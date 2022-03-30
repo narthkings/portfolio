@@ -24,10 +24,10 @@ const Home = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Flex direction={{ base: 'column', xl: 'row' }} alignItems={{ base: 'center', xl: 'unset' }} justifyContent={{ base: 'unset', lg: 'space-between' }} bg="primary" height={{ base: '100%', md: "92vh" }} width={'100%'}>
-        <Flex flexDirection={{ base: 'column' }} alignItems={{ base: 'center', lg: 'unset' }} width={{ base: "100%", md: "80%", xl: "45%" }} padding={"2rem"} color="white">
+      <Flex direction={{ base: 'column', xl: 'row' }} alignItems={{ base: 'center', xl: 'unset' }} justifyContent={{ base: 'unset', lg: 'space-between' }} bg="primary" height={{ base: '84vh', md: "92vh" }}>
+        <Flex flexDirection={{ base: 'column' }} alignItems={{ base: 'center', md: 'unset' }} width={{ base: "100%", md: "80%", xl: "45%" }} padding={"2rem"} color="white">
           <Text
-            marginTop={{ base: "0rem", lg: "10rem" }}
+            marginTop={{ base: "10rem", }}
             textTransform={"capitalize"}
             fontWeight={"semibold"}
             mb={'.5rem'}
@@ -66,7 +66,7 @@ const Home = () => {
             Resume
           </Button>
         </Flex>
-        <Box display={{ lg: 'none', xl: 'unset' }} className="photoImg" width={{ base: '77%', md: '42%', lg: '42%' }} height={{ md: '60%', lg: '90%' }} mt={{ base: 'unset', xl: '5rem' }}>
+        <Box display={{ base: 'none', xl: 'unset' }} className="photoImg" width={{ base: '73%', md: '42%', lg: '42%' }} height={{ md: '60%', lg: '90%' }} mt={{ base: 'unset', xl: '5rem' }}>
           <Image height={{ base: '100%', lg: '88%' }} objectFit={'scale-down'} alt="Dumto Imoh" src={`${process.env.NEXT_PUBLIC_IMAGE}`} />
         </Box>
       </Flex>
