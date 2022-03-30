@@ -44,7 +44,7 @@ const Header = ({ onOpen }: Iprops) => {
       </Box>
 
       {!isMobile ? (
-        <Flex width={"50%"} justifyContent={"space-evenly"}>
+        <Flex width={"48%"} justifyContent={"space-evenly"}>
           <NextLink href="/" passHref>
             <Link color={"white"} fontSize={"lg"}>
               Home
