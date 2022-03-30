@@ -8,6 +8,7 @@ import {
   DrawerFooter,
   Flex,
   Link,
+  Text
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 
@@ -15,11 +16,11 @@ type Props = {
   isOpen: boolean;
   onClose: () => void;
 };
-const SideDrawer = ({isOpen, onClose}: Props) => {
+const SideDrawer = ({ isOpen, onClose }: Props) => {
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={"md"}>
       <DrawerOverlay />
-      <DrawerContent height={"50%"} bg={"#0B0B0B"}>
+      <DrawerContent height={"70%"} bg={"#0B0B0B"}>
         <DrawerCloseButton height={"2rem"} color={"white"} />
 
         <DrawerBody mt={"1rem"}>
@@ -54,6 +55,38 @@ const SideDrawer = ({isOpen, onClose}: Props) => {
                 Contact
               </Link>
             </NextLink>
+
+            <Flex width={'100%'} justifyContent={"space-evenly"} my={'1rem'}>
+              <Text
+                color="secondary.100"
+                fontWeight={"medium"}
+                textTransform={"uppercase"}
+              >
+                <Link href="https://github.com/narthkings" isExternal>
+                  Github
+                </Link>
+              </Text>
+
+              <Text
+                color="secondary.100"
+                fontWeight={"medium"}
+                textTransform={"uppercase"}
+              >
+                <Link href="https://www.linkedin.com/in/dumto-imoh/" isExternal>
+                  Linkedin
+                </Link>
+              </Text>
+
+              <Text
+                color="secondary.100"
+                fontWeight={"medium"}
+                textTransform={"uppercase"}
+              >
+                <Link href="https://twitter.com/narthcodes" isExternal>
+                  Twitter
+                </Link>
+              </Text>
+            </Flex>
           </Flex>
         </DrawerBody>
       </DrawerContent>
