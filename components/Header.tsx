@@ -46,27 +46,27 @@ const Header = ({ onOpen }: Iprops) => {
       {!isMobile ? (
         <Flex width={"48%"} justifyContent={"space-evenly"}>
           <NextLink href="/" passHref>
-            <Link color={"white"} fontSize={"lg"}>
+            <Text cursor={'pointer'} color={"white"} fontSize={"lg"}>
               Home
-            </Link>
+            </Text>
           </NextLink>
 
           <NextLink href="/projects" passHref>
-            <Link color={"white"} fontSize={"lg"}>
+            <Text cursor={'pointer'} color={"white"} fontSize={"lg"}>
               Projects
-            </Link>
+            </Text>
           </NextLink>
 
           <NextLink href="/resume" passHref>
-            <Link color={"white"} fontSize={"lg"}>
+            <Text cursor={'pointer'} color={"white"} fontSize={"lg"}>
               Resume
-            </Link>
+            </Text>
           </NextLink>
 
           <NextLink href="/contact" passHref>
-            <Link color={"white"} fontSize={"lg"}>
+            <Text cursor={'pointer'} color={"white"} fontSize={"lg"}>
               Contact
-            </Link>
+            </Text>
           </NextLink>
         </Flex>
       ) : (

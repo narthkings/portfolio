@@ -18,6 +18,7 @@ model experience {
   start_date      String @default("")
   end_date        String @default("")
   content         String @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
+  ord             Int    @default(1)
 }
 
 model contact {
