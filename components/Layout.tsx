@@ -28,7 +28,6 @@ const Layout: React.FC = ({ children }) => {
                 justifyContent={"space-between"}
                 p={"1rem"}
                 background={"primary"}
-                height={{ base: "5rem", md: "unset" }}
               >
                 <Text fontSize={{ base: ".8rem", lg: "1rem" }} color={"white"}>
                   Copyright {new Date().getFullYear()} ©
