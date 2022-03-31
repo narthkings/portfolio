@@ -82,7 +82,7 @@ const Contact = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box padding={"2rem"} height={{ base: "100vh", md: "95vh" }} bg="black" color="white">
+      <Box padding={"2rem"} height={{ base: "100%", md: "95vh" }} bg="black" color="white">
         <Flex direction={"column"} alignItems={"center"} justifyContent={"center"}>
           <Text fontSize={"2xl"}>
             {"<"}Contact{">"}
@@ -165,11 +165,11 @@ const Contact = () => {
                     onBlur={handleBlur}
                     value={details.message}
                     variant="filled"
-                    placeholder="Amazing Portfolio, I'd like you to work with my team on a project ………"
+                    placeholder="Amazing Portfolio, I'd like you to work with my team on a project"
                     width={{ base: "100%", md: "70%", xl: "40%" }}
                     size="lg"
-                    height={"8rem"}
-                    marginTop={"2rem"}
+                    height={"7rem"}
+                    marginTop={"1.5rem"}
                     disabled={!!isLoading}
                   />
                   <FormHelperText color="red">
