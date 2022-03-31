@@ -8,6 +8,7 @@ type experience {
   start_date: String
   end_date: String
   content: experience_content_Document
+  ord: Int
 }
 
 type experience_content_Document {
@@ -27,6 +28,7 @@ input experienceWhereInput {
   role: StringFilter
   start_date: StringFilter
   end_date: StringFilter
+  ord: IntFilter
 }
 
 input IDFilter {
@@ -68,12 +70,24 @@ input NestedStringFilter {
   not: NestedStringFilter
 }
 
+input IntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: IntFilter
+}
+
 input experienceOrderByInput {
   id: OrderDirection
   name_of_company: OrderDirection
   role: OrderDirection
   start_date: OrderDirection
   end_date: OrderDirection
+  ord: OrderDirection
 }
 
 enum OrderDirection {
@@ -87,6 +101,7 @@ input experienceUpdateInput {
   start_date: String
   end_date: String
   content: JSON
+  ord: Int
 }
 
 input experienceUpdateArgs {
@@ -100,6 +115,7 @@ input experienceCreateInput {
   start_date: String
   end_date: String
   content: JSON
+  ord: Int
 }
 
 type contact {

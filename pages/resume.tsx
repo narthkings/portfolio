@@ -17,6 +17,7 @@ import { Experience } from "../types";
 
 export const getStaticProps = async () => {
   const experiences = (await query.experience.findMany({
+    orderBy: { ord: "asc" },
     query: "id name_of_company role start_date end_date content{ document} ",
   })) as Experience[];
   return {
@@ -184,7 +185,7 @@ const Resume = ({ experiences }: InferGetStaticPropsType<typeof getStaticProps>)
             <Text fontSize={"md"} my={"2"} fontWeight={"medium"}>
               Software Developer
             </Text>
-            <Text width={{ base: "100%", md: "80%" }} fontSize={"sm"}>
+            <Text width={{ base: "100%", md: "80%" }} fontSize={"md"}>
               Hi 👋 there, welcome to my resume corner, below is my resume which sums up
               my work and years of experience in journey as a frontend developer.
             </Text>
@@ -204,7 +205,7 @@ const Resume = ({ experiences }: InferGetStaticPropsType<typeof getStaticProps>)
                     direction={{ base: "column", md: "row" }}
                     alignItems={{ base: "flex-start", md: "center" }}
                   >
-                    <Text fontWeight={"medium"} fontSize={"md"}>
+                    <Text fontWeight={"bold"} fontSize={"lg"}>
                       {exp.name_of_company}
                     </Text>
                     <Divider
@@ -220,11 +221,11 @@ const Resume = ({ experiences }: InferGetStaticPropsType<typeof getStaticProps>)
                     fontStyle={"italic"}
                     my={"1rem"}
                     fontWeight={"thin"}
-                    fontSize={"sm"}
+                    fontSize={"md"}
                   >
                     {exp.start_date} - {exp.end_date}
                   </Text>
-                  <Box width={{ base: "100%", md: "80%" }} fontSize={"sm"}>
+                  <Box width={{ base: "100%", md: "80%" }} fontSize={"md"}>
                     {exp.content.document[0].children[0].text}
                   </Box>
                 </Box>
