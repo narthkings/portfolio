@@ -24,13 +24,14 @@ const Home = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Flex direction={{ base: 'column', xl: 'row' }} alignItems={{ base: 'center', xl: 'unset' }} justifyContent={{ base: 'unset', lg: 'space-between' }} bg="primary" height={{ base: '80vh', md: "92vh" }}>
+      <Flex direction={{ base: 'column', xl: 'row' }} alignItems={{ base: 'center', xl: 'unset' }} justifyContent={{ base: 'unset', lg: 'space-between' }} bg="primary" height={{ base: '82vh', md: "92vh" }}>
         <Flex flexDirection={{ base: 'column' }} alignItems={{ base: 'center', md: 'unset' }} width={{ base: "100%", md: "80%", xl: "45%" }} padding={"2rem"} color="white">
           <Text
             marginTop={{ base: "6rem", md: '10rem' }}
             textTransform={"capitalize"}
             fontWeight={"semibold"}
             mb={'.5rem'}
+            fontSize={'md'}
           >
             Hi I&apos;m Dumto,
           </Text>
@@ -48,7 +49,7 @@ const Home = () => {
               className="typed-strings"
             />
           </Text>
-          <Text width={{ base: '100%', md: '90%', xl: '90%' }} textAlign={{ base: 'justify', lg: 'unset' }} marginTop={{ base: 'unset', lg: "2rem" }}>
+          <Text fontSize={'16'} width={{ base: '100%', md: '90%', xl: '90%' }} textAlign={{ base: 'justify', lg: 'unset' }} marginTop={{ base: 'unset', lg: "2rem" }}>
             Welcome to my little corner of the internet. I am a frontend engineer with a
             passion for user experience and smart front-end solutions using modern
             technologies.When I am not doing frontend development, I am either learning

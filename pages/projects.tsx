@@ -79,7 +79,7 @@ const Projects = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) 
                 ))}
               </Wrap>
 
-              <Text fontSize={{ base: "md", lg: "small" }} fontWeight={"light"} my={"5"}>
+              <Text fontSize={{ base: "md" }} fontWeight={"light"} my={"5"}>
                 {project.description}
               </Text>
               <Link
