@@ -82,7 +82,7 @@ const Contact = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box padding={"2rem"} height={{ base: "100%", md: "95vh" }} bg="black" color="white">
+      <Box padding={"2rem"} minHeight={{ base: "100vh", md: "95vh" }} bg="black" color="white">
         <Flex direction={"column"} alignItems={"center"} justifyContent={"center"}>
           <Text fontSize={"2xl"}>
             {"<"}Contact{">"}
